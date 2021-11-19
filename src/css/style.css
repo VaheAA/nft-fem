@@ -21,6 +21,10 @@ body {
 p {
   font-size: 18px;
 }
+a,
+a:active {
+  text-decoration: none;
+}
 .wrapper {
   height: 100%;
   padding: 0;
@@ -28,7 +32,129 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-card-bg);
 }
 .card {
+  width: 360px;
+  min-height: 600px;
+  background: var(--color-card-bg);
+  border-radius: 10px;
+  margin-top: 80px;
+}
+.card__inner {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.card__image {
+  max-width: 100%;
+  border-radius: 10px;
+  position: relative;
+}
+.card__image::after {
+  content: '';
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 99%;
+  background: rgba(255, 255, 255, 0.5) url('/src/assets/icon-view.svg')
+    no-repeat center center;
+  opacity: 0;
+  transition: 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.card__image:hover::after {
+  opacity: 1;
+}
+.card__image img {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+}
+.card__content {
+  margin-top: 15px;
+  display: block;
+  position: relative;
+  padding-bottom: 20px;
+}
+.card__content::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--color-line);
+  border-radius: 10px;
+}
+.card__title {
+  color: #fff;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.card__title:hover {
+  color: var(--color-cyan);
+}
+.card__desc {
+  font-size: 16px;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+.card__info .etherium {
+  color: var(--color-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.card__info .time {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.card__profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.card__avatar {
+  max-width: 100%;
+  margin-right: 10px;
+}
+.card__avatar img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.card__name {
+  color: var(--color-primary);
+  font-size: 16px;
+}
+.card__name a {
+  color: var(--color-white);
+  transition: 0.2s ease;
+}
+.card__name a:hover {
+  color: var(--color-cyan);
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    margin: 50px 20px 20px 20px;
+  }
 }
