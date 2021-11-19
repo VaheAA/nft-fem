@@ -145,7 +145,7 @@ a:active {
 }
 .card__name {
   color: var(--color-primary);
-  font-size: 16px;
+  font-size: 14px;
 }
 .card__name a {
   color: var(--color-white);
